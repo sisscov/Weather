@@ -25,7 +25,7 @@ function App() {
             return res.json();
           } else {
             if (res.status === 404) {
-              alert("The city was not found");
+              alert("The city was not found")
               city = "";
             }
             alert("Oops, there seems to be an error!");
@@ -40,16 +40,15 @@ function App() {
   }, [city]);
 
   return (
-    <div>
+    <div className="background">
       <div className="d-flex justify-content-center mt-3">
-        <InputGroup style={{ width: "35vw" }}>
+        <InputGroup className="shadow" style={{ width: "40vw" }}>
           <Form.Control
             placeholder="Enter the city"
             onChange={(e) => setCityInput(e.target.value)}
           />
-
           <Button
-            variant="outline-secondary"
+            variant="primary"
             id="button-addon2"
             onClick={() => handleInput()}
           >

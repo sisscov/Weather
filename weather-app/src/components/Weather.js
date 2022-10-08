@@ -16,7 +16,6 @@ function CardExampleCard({ weatherData }) {
         .then((res) => res.json())
         .then((json) => {
           setPhoto(json.results[0]?.urls?.raw);
-          console.log(photo);
           if (photo === undefined) {
             setPhoto(
               "https://cdn.britannica.com/28/148428-050-5EC50B76/Flint-Hills-region-Great-Plains-Kansas.jpg"
@@ -28,13 +27,17 @@ function CardExampleCard({ weatherData }) {
   }, [cityName]);
   return (
     <div className="d-flex justify-content-center mt-3">
-      <Card style={{ width: "35vw" }}>
-        <Card.Img variant="top" src={photo} />
+      <Card className="card shadow" style={{ width: "40vw" }}>
+        <Card.Img variant="top" src={photo} className="cardImage" />
         <Card.Body>
-          <Card.Title>City Name: {weatherData.name}</Card.Title>
-          <Card.Text>
-            <p>Day: {moment().format("dddd")}</p>
-            <p>Date: {moment().format("LL")}</p>
+          <Card.Title className="d-inline">
+            City Name: {weatherData.name}
+            <p className="todayIs">
+              {moment().format("dddd")}, {moment().format("LL")}
+            </p>
+          </Card.Title>
+          <Card.Text className="mt-3">
+            <div className="horizontal-row"></div>
             <p>Temprature: {weatherData.main.temp} &deg;C</p>
             <p>
               Sunrise:{" "}

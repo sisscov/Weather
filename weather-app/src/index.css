@@ -6,9 +6,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
+  background-image: url(https://i.pinimg.com/originals/aa/ae/0c/aaae0c802ccda8932463d924c15e1214.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+} 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.todayIs{
+  float: right;
+}
+.cardImage{
+  max-height: 45vh;
+}
+.horizontal-row {
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  float:left;
+  height:1px;
+  width:100%;
+  background-color: #000;
+  margin-bottom: 3%;
+  box-shadow: #000 0 0 1px 0;
+ } 
+@media only screen and (max-width: 1600px) {
+body{
+background-size: auto;
+}
 }

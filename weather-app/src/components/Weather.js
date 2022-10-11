@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 
 function CardExampleCard({ weatherData }) {
   const [photo, setPhoto] = useState("");
-  const cityName = weatherData.name;
+  const cityName = weatherData?.name;
   useEffect(() => {
     const fetchData = async () => {
       await fetch(
@@ -31,28 +31,28 @@ function CardExampleCard({ weatherData }) {
         <Card.Img variant="top" src={photo} className="cardImage" />
         <Card.Body>
           <Card.Title className="d-inline">
-            City Name: {weatherData.name}
+            City Name: {weatherData?.name}
             <p className="todayIs">
               {moment().format("dddd")}, {moment().format("LL")}
             </p>
           </Card.Title>
           <Card.Text className="mt-3">
             <div className="horizontal-row"></div>
-            <p>Temprature: {weatherData.main.temp} &deg;C</p>
+            <p>Temprature: {weatherData?.main.temp} &deg;C</p>
             <p>
               Sunrise:{" "}
-              {new Date(weatherData.sys.sunrise * 1000).toLocaleTimeString(
+              {new Date(weatherData?.sys.sunrise * 1000).toLocaleTimeString(
                 "en-IN"
               )}
             </p>
             <p>
               Sunset:{" "}
-              {new Date(weatherData.sys.sunset * 1000).toLocaleTimeString(
+              {new Date(weatherData?.sys.sunset * 1000).toLocaleTimeString(
                 "en-IN"
               )}
             </p>
-            <p>Description: {weatherData.weather[0].main}</p>
-            <p>Humidity: {weatherData.main.humidity} %</p>
+            <p>Description: {weatherData?.weather[0].main}</p>
+            <p>Humidity: {weatherData?.main.humidity} %</p>
           </Card.Text>
         </Card.Body>
       </Card>

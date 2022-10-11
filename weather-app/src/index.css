@@ -15,7 +15,8 @@ code {
     monospace;
 }
 .todayIs{
-  float: right;
+  font-size:medium;
+  margin-top: 1%;
 }
 .cardImage{
   max-height: 45vh;

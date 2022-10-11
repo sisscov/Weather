@@ -46,6 +46,7 @@ function App() {
           <Form.Control
             placeholder="Enter the city"
             onChange={(e) => setCityInput(e.target.value)}
+            data-testid="cityName"
           />
           <Button
             variant="primary"
